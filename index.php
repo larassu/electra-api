@@ -44,7 +44,7 @@
                     <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a>
                     </li>
                     <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
-                                    class="fas fa-search"></i></a></li>
+                                class="fas fa-search"></i></a></li>
                 </ul>
                 <div class="search-element">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250"
@@ -116,7 +116,7 @@
             <ul class="navbar-nav navbar-right">
                 <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
                                                              class="nav-link nav-link-lg message-toggle beep"><i
-                                class="far fa-envelope"></i></a>
+                            class="far fa-envelope"></i></a>
                     <div class="dropdown-menu dropdown-list dropdown-menu-right">
                         <div class="dropdown-header">Messages
                             <div class="float-right">
@@ -184,7 +184,7 @@
                 </li>
                 <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
                                                              class="nav-link notification-toggle nav-link-lg beep"><i
-                                class="far fa-bell"></i></a>
+                            class="far fa-bell"></i></a>
                     <div class="dropdown-menu dropdown-list dropdown-menu-right">
                         <div class="dropdown-header">Notifications
                             <div class="float-right">
@@ -333,9 +333,9 @@
                 </div>
             </section>
 
-            <!-- form-create -->
-            <div class="modal fade" id="createModal" tabindex="-1" role="dialog"
-                 aria-labelledby="createModalLabel" aria-hidden="true">
+            <!-- form-create-update -->
+            <div class="modal fade" id="pelangganModal" tabindex="-1" role="dialog"
+                 aria-labelledby="pelangganModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -344,8 +344,8 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form id="form-create" method="post"
-                              action="https://www.hnfarchery.com/magangelectra/restCI-master/person/add">
+                        <form id="form-pelanggan" method="post">
+                            <input type="hidden" name="_method">
                             <div class="modal-body">
                                 <div class="row form-group">
                                     <div class="col">
@@ -378,7 +378,7 @@
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i
-                                                            class="fa fa-map-marked-alt"></i></span>
+                                                        class="fa fa-map-marked-alt"></i></span>
                                             </div>
                                             <textarea id="address" name="address" class="form-control"
                                                       rows="3" placeholder="Alamat lengkap" required
@@ -396,75 +396,9 @@
                 </div>
             </div>
 
-            <!-- form-update -->
-            <div class="modal fade" id="updateModal" tabindex="-1" role="dialog"
-                 aria-labelledby="updateModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Edit Data #<strong></strong></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form id="form-update" method="post"
-                              action="https://www.hnfarchery.com/magangelectra/restCI-master/person/update">
-                            <input type="hidden" name="id">
-                            <input type="hidden" name="_method" value="PUT">
-                            <div class="modal-body">
-                                <div class="row form-group">
-                                    <div class="col">
-                                        <label for="name_up">Nama Pelanggan</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <input id="name_up" type="text" maxlength="191" name="name"
-                                                   class="form-control" placeholder="Nama lengkap" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col">
-                                        <label for="phone_up">Nomor Telepon</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
-                                            </div>
-                                            <input id="phone_up" type="text" maxlength="191" name="phone"
-                                                   onkeypress="return numberOnly(event, false)"
-                                                   class="form-control" placeholder="Nomor telepon" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col">
-                                        <label for="address_up">Address</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                            class="fa fa-map-marked-alt"></i></span>
-                                            </div>
-                                            <textarea id="address_up" name="address" class="form-control"
-                                                      rows="3" placeholder="Alamat lengkap" required
-                                                      style="resize: vertical;min-height:50px;height:100%;"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
             <!-- form-delete -->
-            <form id="form-delete" method="post"
-                  action="https://www.hnfarchery.com/magangelectra/restCI-master/person/delete">
-                <input type="hidden" name="id">
+            <form id="form-delete" method="post">
+                <input type="hidden" name="_method" value="DELETE">
             </form>
         </div>
         <footer class="main-footer">
@@ -522,7 +456,7 @@
             dom: "<'row'<'col-sm-12 col-md-3'l><'col-sm-12 col-md-5'B><'col-sm-12 col-md-4'f>>" +
                 "<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
             ajax: {
-                url: 'https://www.hnfarchery.com/magangelectra/restCI-master/person',
+                url: 'https://www.hnfarchery.com/magangelectra/rest-api/person',
                 dataSrc: '',
             },
             columns: [
@@ -583,13 +517,14 @@
                 $('#dt-pelanggan tbody').on('click', '.btn-edit', function () {
                     var data = table.row($(this).parents('tr')).data();
 
-                    $("#updateModal .modal-title strong").text(data.name);
-                    $("#form-update input[name=id]").val(data.id);
-                    $("#name_up").val(data.name);
-                    $("#phone_up").val(data.phone);
-                    $("#address_up").val(data.address);
+                    $("#pelangganModal .modal-title").html('Edit Data #<strong>'+data.name+'</strong>');
+                    $("#form-pelanggan").attr('action', 'https://www.hnfarchery.com/magangelectra/rest-api/person/'+data.id+'/update');
+                    $("#form-pelanggan input[name=_method]").val('PUT');
+                    $("#name").val(data.name);
+                    $("#phone").val(data.phone);
+                    $("#address").val(data.address);
 
-                    $("#updateModal").modal('show');
+                    $("#pelangganModal").modal('show');
                 });
 
                 $('#dt-pelanggan tbody').on('click', '.btn-delete', function () {
@@ -604,13 +539,12 @@
                         closeOnClickOutside: false,
                     }).then((confirm) => {
                         if (confirm) {
-                            $("#form-delete input[name=id]").val(data.id);
                             $.ajax({
-                                url: $("#form-delete").attr('action'),
-                                data: $("#form-delete").serializeObject(),
-                                method: 'DELETE',
-                                contentType: 'application/json',
-                                dataType:"json",
+                                type: "POST",
+                                url: 'https://www.hnfarchery.com/magangelectra/rest-api/person/' + data.id + '/delete',
+                                data: new FormData($("#form-delete")[0]),
+                                contentType: false,
+                                processData: false,
                                 success: function (response) {
                                     if (response.status == 200) {
                                         swal({
@@ -639,26 +573,29 @@
     });
 
     function createPelanggan() {
+        $("#pelangganModal .modal-title").text('Tambah Data Pelanggan');
+        $("#form-pelanggan").attr('action', 'https://www.hnfarchery.com/magangelectra/rest-api/person/create');
+        $("#form-pelanggan input[name=_method]").val('POST');
         $("#name, #phone, #address").val('');
 
-        $("#createModal").modal('show');
+        $("#pelangganModal").modal('show');
     }
 
-    $("#form-create").on('submit', function (e) {
+    $("#form-pelanggan").on('submit', function (e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: $("#form-create").attr('action'),
-            data: new FormData($("#form-create")[0]),
+            url: $("#form-pelanggan").attr('action'),
+            data: new FormData($("#form-pelanggan")[0]),
             contentType: false,
             processData: false,
             success: function (response) {
                 if (response.status == 200) {
-                    $("#createModal").modal('hide');
+                    $("#pelangganModal").modal('hide');
 
                     swal({
                         title: 'Success',
-                        text: 'Data pelanggan [' + $("#name").val() + '] berhasil ditambahkan!',
+                        text: response.message,
                         icon: 'success',
                         buttons: "OK",
                         closeOnEsc: false,
@@ -675,67 +612,6 @@
             }
         });
     });
-
-    $("#form-update").on('submit', function (e) {
-        swal({
-            title: 'Success',
-            text: 'Data pelanggan [' + $("#name_up").val() + '] berhasil diperbarui!',
-            icon: 'success',
-            buttons: "OK",
-            closeOnEsc: false,
-            closeOnClickOutside: false,
-        }).then((confirm) => {
-            if (confirm) {
-                window.location.href = 'index.php';
-            }
-        });
-        /*e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: $("#form-update").attr('action'),
-            data: new FormData($("#form-update")[0]),
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                if (response.status == 200) {
-                    $("#updateModal").modal('hide');
-
-                    swal({
-                        title: 'Success',
-                        text: 'Data pelanggan [' + $("#name_up").val() + '] berhasil diperbarui!',
-                        icon: 'success',
-                        buttons: "OK",
-                        closeOnEsc: false,
-                        closeOnClickOutside: false,
-                    }).then((confirm) => {
-                        if (confirm) {
-                            window.location.href = 'index.php';
-                        }
-                    });
-                }
-            },
-            error: function () {
-                swal('Oopss..', 'Something went wrong! Please refresh your browser.', 'error');
-            }
-        });*/
-    });
-
-    $.fn.serializeObject = function()
-    {
-        var o = {};
-        var a = this.serializeArray();
-        $.each(a, function() {
-            if (o[this.name]) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
-                }
-                o[this.name].push(this.value || '');
-            } else {
-                o[this.name] = this.value || '';
-            }
-        });
-        return o;
-    };
 
     function numberOnly(e, decimal) {
         var key;
